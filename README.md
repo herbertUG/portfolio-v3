@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/main/src/images/logo.png" width="100" />
+  <img alt="Logo" src="https://github.com/wwwhickup/portfolio-v3/blob/master/src/images/logo.png" width="100" />
 </div>
 <h1 align="center">
   Richard Hong Portfolio v2
@@ -7,15 +7,7 @@
 <p align="center">
   The fourth iteration of <a href="http://richardhong.epizy.com/" target="_blank">richardhong.epizy.com/</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">epizy free Netlify</a>
 </p>
-<p align="center">
-  <a href="https://app.netlify.com/sites/brittanychiang/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
-  </a>
-</p>
 
-![demo](http://richardhong.epizy.com/demo.png)
-## Backend Strpi💤 (please read!)
-https://richard-portfolio-strapi.herokuapp.com/
 ## 🚨 Forking this repo (please read!)
 
 Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
@@ -23,6 +15,10 @@ Many people have contacted me asking me if they can use this code for their own 
 I value keeping my site open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
 
 Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
+
+As a backend, I used [Strapi](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html) Headless CMS. By adding strapi record, you can generate your portfolio website.  If you want to build your portfolio easily then direct contact me via email(richardhong33@hotmail.com) or you can find my detail contact from my portfolio website(http://richardhong.epizy.com)
+
+Also you can use hardcorded static seed either😉
 
 ### TL;DR
 
