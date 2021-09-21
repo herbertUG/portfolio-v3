@@ -16,7 +16,7 @@ I value keeping my site open source, but as you all know, _**plagiarism is bad**
 
 Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
 
-As a backend, I used [Strapi](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html) Headless CMS. By adding strapi record, you can generate your portfolio website.  If you want to build your portfolio easily then direct contact me via email(richardhong33@hotmail.com) or you can find my detail contact from my portfolio website(http://richardhong.epizy.com)
+As a backend, I used [Strapi](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html) Headless CMS. By adding strapi record, you can generate your portfolio website.  If you want to build your portfolio easily then direct contact me via [email](mailto:richardhong33@hotmail.com) or you can find my detail contact from my [portfolio website](http://richardhong.epizy.com)
 
 Also you can use hardcorded static seed either😉
 
