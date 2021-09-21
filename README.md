@@ -14,7 +14,8 @@
 </p>
 
 ![demo](http://richardhong.epizy.com/demo.png)
-
+## Backend Strpi💤 (please read!)
+https://richard-portfolio-strapi.herokuapp.com/
 ## 🚨 Forking this repo (please read!)
 
 Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
