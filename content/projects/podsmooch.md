@@ -2,7 +2,7 @@
 date: '2020-03-27'
 title: 'Media podcasting website'
 github: ''
-external: 'https://podsmooch-dev.azurewebsites.net'
+external: 'https://www.podsmooch.com/'
 tech:
   - React
   - .Net

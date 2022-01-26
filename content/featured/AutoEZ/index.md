@@ -1,6 +1,6 @@
 ---
 date: '6'
-title: 'LeadWorx'
+title: 'Autoez'
 cover: './autoez.jpg'
 external: 'https://autoez.com'
 tech:
