@@ -19,6 +19,10 @@ const StyledAboutSection = styled.section`
   }
 `;
 const StyledText = styled.div`
+  .white-bold {
+    color: #6fffe1;
+    font-weight: 500;
+  }
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -155,8 +159,11 @@ const About = () => {
         <StyledText>
           <div>
             <p>Hello! I'm Richard, a software engineer based in Hong Kong.</p>
+            <p className="white-bold">
+              Now I am in the career change to Smart Contract and DApp engineer.{' '}
+            </p>
             <p>
-              I am a Front End developer with over 7 years of experience who is proficient in
+              I was a Front End developer with over 8 years of experience who is proficient in
               cutting edge web technologies like React/Redux, Next.js, Gatsby.js, Vue.js, Nuxt.js,
               TypeScript, Node.js/Express.js and much more.
             </p>
