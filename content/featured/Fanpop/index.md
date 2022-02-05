@@ -12,4 +12,4 @@ tech:
 showInProjects: true
 ---
 
-AutoEz is Car dealing website. Users can just buy their car with their best price. Developed this project with React and I used functional components and hooks in this project. For the Css framework, I used React Bootstrap..
+Fanpop is one of the social platforms that was published in 2008🙀. The tech stack is Ruby on Rails, AWS, PostgreSQL. I built the mobile application by using React Native Expo and GCP(Google Cloud Platform).
