@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { navLinks } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
+import { useStaticQuery, graphql } from "gatsby"
 
 const StyledMenu = styled.div`
   display: none;
@@ -158,6 +159,21 @@ const StyledSidebar = styled.aside`
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const {allStrapiPortfolio} = useStaticQuery(graphql`{
+    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
+      edges {
+        node {
+          profile {
+            resume {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  `)
+  const {url} = allStrapiPortfolio.edges[0].node.profile.resume
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const buttonRef = useRef(null);
@@ -260,7 +276,7 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
+            <a href={`${process.env.GATSBY_STRAPI_URL.replace('/api', '')} ${url}}`} className="resume-link">
               Resume
             </a>
           </nav>
