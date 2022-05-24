@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { email } from '@config';
 import { Side } from '@components';
 
 const StyledLinkWrapper = styled.div`
@@ -34,13 +33,16 @@ const StyledLinkWrapper = styled.div`
   }
 `;
 
-const Email = ({ isHome }) => (
-  <Side isHome={isHome} orientation="right">
-    <StyledLinkWrapper>
-      <a href={`mailto:${email}`}>{email}</a>
-    </StyledLinkWrapper>
-  </Side>
-);
+const Email = ({ isHome, contacts }) => {
+  const email = contacts.filter(contact => contact.app === 'email')[0].data
+  return(
+    <Side isHome={isHome} orientation="right">
+      <StyledLinkWrapper>
+        <a href={`mailto:${email}`}>{email}</a>
+      </StyledLinkWrapper>
+    </Side>
+  );
+}
 
 Email.propTypes = {
   isHome: PropTypes.bool,

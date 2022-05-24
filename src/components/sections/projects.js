@@ -140,30 +140,7 @@ const StyledProject = styled.div`
   }
 `;
 
-const Projects = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      projects: allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "/projects/" }
-          frontmatter: { showInProjects: { ne: false } }
-        }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              tech
-              github
-              external
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
+const Projects = ({data}) => {
 
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
@@ -177,9 +154,8 @@ const Projects = () => {
   }, []);
 
   const GRID_LIMIT = 6;
-  const projects = data.projects.edges.filter(({ node }) => node);
-  const firstSix = projects.slice(0, GRID_LIMIT);
-  const projectsToShow = showMore ? projects : firstSix;
+  const firstSix = data.filter((project) => !project.is_featured).slice(0, GRID_LIMIT);
+  const projectsToShow = showMore ? data : firstSix;
 
   return (
     <StyledProjectsSection>
@@ -191,9 +167,9 @@ const Projects = () => {
 
       <TransitionGroup className="projects-grid">
         {projectsToShow &&
-          projectsToShow.map(({ node }, i) => {
-            const { frontmatter, html } = node;
-            const { github, external, title, tech } = frontmatter;
+          projectsToShow.map((project, i) => {
+            const { is_featured, project_name, overview, url, github, stack } = project
+            if(is_featured) return null
 
             return (
               <CSSTransition
@@ -220,26 +196,23 @@ const Projects = () => {
                               <Icon name="GitHub" />
                             </a>
                           )}
-                          {external && (
-                            <a href={external} aria-label="External Link" className="external">
+                          {url && (
+                            <a href={url} aria-label="External Link" className="external">
                               <Icon name="External" />
                             </a>
                           )}
                         </div>
                       </div>
 
-                      <h3 className="project-title">{title}</h3>
+                      <h3 className="project-title">{project_name}</h3>
 
-                      <div
-                        className="project-description"
-                        dangerouslySetInnerHTML={{ __html: html }}
-                      />
+                      <div className="project-description">{ overview }</div>
                     </header>
 
                     <footer>
-                      {tech && (
+                      {stack.length && (
                         <ul className="project-tech-list">
-                          {tech.map((tech, i) => (
+                          {stack.map((tech, i) => (
                             <li key={i}>{tech}</li>
                           ))}
                         </ul>

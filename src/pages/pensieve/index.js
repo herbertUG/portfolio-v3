@@ -135,7 +135,7 @@ const PensievePage = ({ location, data }) => {
         </header>
 
         <StyledGrid>
-          <div className="posts">
+          {/* <div className="posts">
             {posts.length > 0 &&
               posts.map(({ node }, i) => {
                 const { frontmatter } = node;
@@ -174,7 +174,7 @@ const PensievePage = ({ location, data }) => {
                   </StyledPost>
                 );
               })}
-          </div>
+          </div> */}
         </StyledGrid>
       </StyledMainContainer>
     </Layout>
@@ -187,26 +187,3 @@ PensievePage.propTypes = {
 };
 
 export default PensievePage;
-
-export const pageQuery = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            slug
-            date
-            tags
-            draft
-          }
-          html
-        }
-      }
-    }
-  }
-`;

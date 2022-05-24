@@ -5,19 +5,17 @@ require('dotenv').config({
 });
 const strapiConfig = {
   apiURL: 'http://localhost:1337',
-  collectionTypes: [
-    {
-      singularName: 'portfolio',
-      queryParams: {
-        publicationState: 'live',
-        populate: {
-          profile: { populate: '*' },
-          career_path: '*',
-          projects: '*',
-        },
-      },
-    },
-  ],
+  collectionTypes: [{
+    singularName: "portfolio",
+    queryParams: {
+      publicationState: "live",
+      populate: {
+        profile: { populate: "*" },
+        career_path: "*",
+        projects: "*"
+      }
+    }
+  }],
   singleTypes: [],
 };
 
@@ -52,6 +50,6 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
-    },
+    }
   ],
 };

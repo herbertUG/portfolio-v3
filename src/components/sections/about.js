@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
@@ -113,39 +113,13 @@ const StyledPic = styled.div`
   }
 `;
 
-const About = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      avatar: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "5.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500, traceSVG: { color: "#64ffda" }) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-    }
-  `);
+const About = ({data}) => {
 
   const revealContainer = useRef(null);
 
   useEffect(() => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
-
-  const skills = [
-    'JavaScript (ES6+)',
-    'React, Next.js',
-    'React Native',
-    'Vue, Vuex, Nuxt.js',
-    'Angular',
-    'Node.js, Express.js',
-    'GraphQL, Apollo',
-    'PHP, Laravel',
-    'Python, Django',
-    'MySQL, MongoDB',
-    'DevOps, AWS, Firebase',
-    'Git, Docker, Vercel',
-  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -154,31 +128,16 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>Hello! I'm Richard, a software engineer based in Hong Kong.</p>
-            <p>
-              I am a Front End developer with over 7 years of experience who is proficient in
-              cutting edge web technologies like React/Redux, Next.js, Gatsby.js, Vue.js, Nuxt.js,
-              TypeScript, Node.js/Express.js and much more.
-            </p>
-            <p>
-              One of my strong points is integrating 3rd party API such as social(Facebook, Twitter,
-              Gmail), Firebase, Twillio, Payment Gateway, Hubspot, Quickbooks, OAuth, AuthO, WebRTC
-              and integrating AWS(Lambda, DynamoDB, EC2, S3, Elastic Beanstalk, Amplify, Cognito).
-            </p>
-            <p>
-              Shortly after graduating from Kosin University, I joined the e-Perfect IT Company.
-              Here are a few technologies I've been working with recently:
-            </p>
+            <ReactMarkdown children={data.overview} remarkPlugins={[remarkGfm]} />
           </div>
-
           <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
+            {data.skills.frontEnd && data.skills.frontEnd.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
         </StyledText>
 
         <StyledPic>
           <div className="wrapper">
-            <Img fluid={data.avatar.childImageSharp.fluid} alt="Avatar" className="img" />
+            <img src={process.env.GATSBY_STRAPI_URL.replace('/api', '') + data.avatar.data.attributes.url} alt="Avatar" className="img" />
           </div>
         </StyledPic>
       </div>

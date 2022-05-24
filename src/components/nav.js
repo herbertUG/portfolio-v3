@@ -8,7 +8,8 @@ import { loaderDelay } from '@utils';
 import { useScrollDirection } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby"
+
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -131,23 +132,22 @@ const Nav = ({ isHome }) => {
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
 
-  const { allStrapiPortfolio } = useStaticQuery(graphql`
-    {
-      allStrapiPortfolio(filter: { profile: { first_name: { eq: "Richard" } } }) {
-        edges {
-          node {
-            id
-            profile {
-              resume {
-                url
-              }
+  const {allStrapiPortfolio} = useStaticQuery(graphql`{
+    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
+      edges {
+        node {
+          id
+          profile {
+            resume {
+              url
             }
           }
         }
       }
     }
-  `);
-  const { url } = allStrapiPortfolio.edges[0].node.profile.resume;
+  }
+  `)
+  const { url } = allStrapiPortfolio.edges[0].node.profile.resume
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);

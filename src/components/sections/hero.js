@@ -39,7 +39,7 @@ const StyledHeroSection = styled.section`
   }
 `;
 
-const Hero = () => {
+const Hero = ({data}) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -48,12 +48,11 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Richard Hong.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">{`${data.first_name} ${data.last_name}`}.</h2>;
+  const three = <h3 className="big-heading">{data.title}</h3>;
   const four = (
     <p>
-      I'm a software engineer based in Hong Kong specializing in building (and occasionally
-      designing) exceptional , high-quality web & mobile(RN) applications.
+      {data.header_line}
     </p>
   );
   const five = (

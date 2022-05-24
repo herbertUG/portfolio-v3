@@ -6,64 +6,33 @@
 
 const path = require('path');
 const _ = require('lodash');
+const axios = require('axios');
+const qs = require('qs')
+const STRAPI_URL = process.env.GATSBY_STRAPI_URL
+
+const fetchFromStrapi = (apiId, query = '') => {
+  return axios.get(`${STRAPI_URL}/${apiId}/${query}`)
+}
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve(`src/templates/post.js`);
-  const tagTemplate = path.resolve('src/templates/tag.js');
-
-  const result = await graphql(`
-    {
-      postsRemark: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/posts/" } }
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-          }
-        }
-      }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
-        }
-      }
-    }
-  `);
-
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return;
-  }
-
-  // Create post detail pages
-  const posts = result.data.postsRemark.edges;
-
-  posts.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.slug,
-      component: postTemplate,
-      context: {},
-    });
+  const query = qs.stringify({
+    populate: {
+      profile: { populate: '*' },
+      career_path: { populate: '*' },
+      projects: { populate: '*' }
+    } 
+  }, {
+    encodeValuesOnly: true,
   });
-
-  // Extract tag data from query
-  const tags = result.data.tagsGroup.group;
-  // Make tag pages
-  tags.forEach(tag => {
-    createPage({
-      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
-      context: {
-        tag: tag.fieldValue,
-      },
-    });
-  });
+  const profile = await fetchFromStrapi('portfolios', `1?${query}`)
+  createPage({
+    path: '/',
+    component: path.resolve('./src/templates/profile.js'),
+    context: {
+      ...profile.data
+    },
+  })
 };
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
@@ -93,7 +62,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@config': path.resolve(__dirname, 'src/config'),
         '@fonts': path.resolve(__dirname, 'src/fonts'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
-        '@images': path.resolve(__dirname, 'src/images'),
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@utils': path.resolve(__dirname, 'src/utils'),

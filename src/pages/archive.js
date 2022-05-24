@@ -129,7 +129,7 @@ const StyledTableContainer = styled.div`
 `;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+  // const projects = data.allMarkdownRemark.edges;
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -161,7 +161,7 @@ const ArchivePage = ({ location, data }) => {
                 <th>Link</th>
               </tr>
             </thead>
-            <tbody>
+            {/* <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
                   const {
@@ -222,7 +222,7 @@ const ArchivePage = ({ location, data }) => {
                     </tr>
                   );
                 })}
-            </tbody>
+            </tbody> */}
           </table>
         </StyledTableContainer>
       </main>
@@ -235,28 +235,3 @@ ArchivePage.propTypes = {
 };
 
 export default ArchivePage;
-
-export const pageQuery = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            title
-            tech
-            github
-            external
-            ios
-            android
-            company
-          }
-          html
-        }
-      }
-    }
-  }
-`;
