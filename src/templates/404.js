@@ -27,6 +27,7 @@ const StyledHomeButton = styled(Link)`
 `;
 
 const NotFoundPage = ({ location, data }) => {
+
   const [isMounted, setIsMounted] = useState(false);
   const { profile } = data.strapiPortfolio
 
