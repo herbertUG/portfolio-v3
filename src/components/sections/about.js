@@ -137,7 +137,7 @@ const About = ({data}) => {
 
         <StyledPic>
           <div className="wrapper">
-            <img src={process.env.GATSBY_STRAPI_URL.replace('/api', '') + data.avatar.data.attributes.url} alt="Avatar" className="img" />
+            <img src={process.env.GATSBY_STRAPI_URL + data.avatar.data.attributes.url} alt="Avatar" className="img" />
           </div>
         </StyledPic>
       </div>

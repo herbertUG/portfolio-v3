@@ -294,7 +294,7 @@ const Featured = ({data}) => {
                     
                 <div className="project-image">
                   <a href={url ? url : github ? github : '#'}>
-                    <img  src={process.env.GATSBY_STRAPI_URL.replace('/api', '') + assets.data[0].attributes.url} alt={project_name} className="img" />
+                    <img  src={process.env.GATSBY_STRAPI_URL + assets.data[0].attributes.url} alt={project_name} className="img" />
                   </a>
                 </div>
               </StyledProject>

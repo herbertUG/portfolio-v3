@@ -212,7 +212,7 @@ const Nav = ({ isHome }) => {
                 <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                   <a
                     className="resume-button"
-                    href={process.env.GATSBY_STRAPI_URL.replace('/api', '') + url}
+                    href={process.env.GATSBY_STRAPI_URL + url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
@@ -7,6 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
+import { useStaticQuery, graphql } from "gatsby"
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -128,8 +128,34 @@ const StyledTableContainer = styled.div`
   }
 `;
 
-const ArchivePage = ({ location, data }) => {
-  // const projects = data.allMarkdownRemark.edges;
+const ArchivePage = ({ location }) => {
+  const {allStrapiPortfolio} = useStaticQuery(graphql`{
+    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
+      edges {
+        node {
+          id
+          projects {
+            project_name
+            overview
+            url
+            is_featured
+            date,
+            company
+            stack {
+              strapi_json_value
+            }
+            assets {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  `)
+
+  const { projects } = allStrapiPortfolio.edges[0].node
+  console.log("projects: ", projects)
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -161,44 +187,43 @@ const ArchivePage = ({ location, data }) => {
                 <th>Link</th>
               </tr>
             </thead>
-            {/* <tbody>
+            <tbody>
               {projects.length > 0 &&
-                projects.map(({ node }, i) => {
+                projects.map((project, i) => {
                   const {
-                    date,
+                    project_name,
+                    overview,
+                    url,
                     github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                  } = node.frontmatter;
+                    stack,
+                    date,
+                    company
+                  } = project;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
-                      <td className="title">{title}</td>
+                      <td className="title">{project_name}</td>
 
                       <td className="company hide-on-mobile">
                         {company ? <span>{company}</span> : <span>—</span>}
                       </td>
 
                       <td className="tech hide-on-mobile">
-                        {tech.length > 0 &&
-                          tech.map((item, i) => (
+                        {stack.strapi_json_value.length > 0 &&
+                          stack.strapi_json_value.map((item, i) => (
                             <span key={i}>
                               {item}
                               {''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
+                              {i !== stack.strapi_json_value.length - 1 && <span className="separator">&middot;</span>}
                             </span>
                           ))}
                       </td>
 
                       <td className="links">
                         <div>
-                          {external && (
-                            <a href={external} aria-label="External Link">
+                          {url && (
+                            <a href={url} aria-label="External Link">
                               <Icon name="External" />
                             </a>
                           )}
@@ -207,22 +232,12 @@ const ArchivePage = ({ location, data }) => {
                               <Icon name="GitHub" />
                             </a>
                           )}
-                          {ios && (
-                            <a href={ios} aria-label="Apple App Store Link">
-                              <Icon name="AppStore" />
-                            </a>
-                          )}
-                          {android && (
-                            <a href={android} aria-label="Google Play Store Link">
-                              <Icon name="PlayStore" />
-                            </a>
-                          )}
                         </div>
                       </td>
                     </tr>
                   );
                 })}
-            </tbody> */}
+            </tbody>
           </table>
         </StyledTableContainer>
       </main>
@@ -231,7 +246,6 @@ const ArchivePage = ({ location, data }) => {
 };
 ArchivePage.propTypes = {
   location: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
 };
 
 export default ArchivePage;

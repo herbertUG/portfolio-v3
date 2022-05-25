@@ -11,7 +11,7 @@ const qs = require('qs')
 const STRAPI_URL = process.env.GATSBY_STRAPI_URL
 
 const fetchFromStrapi = (apiId, query = '') => {
-  return axios.get(`${STRAPI_URL}/${apiId}/${query}`)
+  return axios.get(`${STRAPI_URL}/api/${apiId}/${query}`)
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {

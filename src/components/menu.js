@@ -276,7 +276,7 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href={`${process.env.GATSBY_STRAPI_URL.replace('/api', '')} ${url}}`} className="resume-link">
+            <a href={`${process.env.GATSBY_STRAPI_URL} ${url}}`} className="resume-link">
               Resume
             </a>
           </nav>
