@@ -45,8 +45,7 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/logo.png',
       },
-    },
-    {
+    }, {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     }

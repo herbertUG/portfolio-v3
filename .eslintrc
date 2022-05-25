@@ -1,4 +1,0 @@
-{
-  "extends": "@upstatement/eslint-config/react",
-  "semi": ["never"]
-}
