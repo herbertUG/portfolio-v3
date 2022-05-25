@@ -237,6 +237,9 @@ export const query = graphql`
           name
           url
         }
+        resume {
+          url
+        }
       }
       projects {
         company
