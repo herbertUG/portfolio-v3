@@ -259,7 +259,6 @@ const Menu = ({resumeUrl}) => {
                 ))}
               </ol>
             )}
-
             <a href={process.env.GATSBY_STRAPI_URL + resumeUrl} className="resume-link">
               Resume
             </a>
