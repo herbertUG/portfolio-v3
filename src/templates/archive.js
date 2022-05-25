@@ -225,8 +225,8 @@ ArchivePage.propTypes = {
 };
 
 export const query = graphql`
-  query getPortfolioProjectsByID($id: String) {
-    strapiPortfolio(id: {eq: $id}) {
+  query getPortfolioProjectsByID($id: Int) {
+    strapiPortfolio(strapi_id: {eq: $id}) {
       id
       profile {
         contacts {

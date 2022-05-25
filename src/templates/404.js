@@ -61,8 +61,8 @@ NotFoundPage.propTypes = {
 };
 
 export const query = graphql`
-  query getPortfolioProfileByID($id: String) {
-    strapiPortfolio(id: {eq: $id}) {
+  query getPortfolioProfileByID($id: Int) {
+    strapiPortfolio(strapi_id: {eq: $id}) {
       id
       profile {
         contacts {

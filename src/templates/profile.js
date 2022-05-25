@@ -22,12 +22,28 @@ const ProfileTemplate = ({ location, data }) => {
 };
 
 export const query = graphql`
-  query getPortfolioByID($id: String) {
-    strapiPortfolio(id: {eq: $id}) {
+  query getPortfolioByID($id: Int) {
+    strapiPortfolio(strapi_id: {eq: $id}) {
       id
       profile {
         first_name
         last_name
+        title
+        birth
+        header_line
+        avatar {
+          url
+        }
+        skills {
+          internal {
+            content
+          }
+        }
+        overview {
+          data {
+            overview
+          }
+        }
         contacts {
           app
           data
@@ -36,20 +52,8 @@ export const query = graphql`
           name
           url
         }
-        skills {
-          internal {
-            content
-          }
-        }
-        birth
-        avatar {
+        resume {
           url
-        }
-        header_line
-        overview {
-          data {
-            overview
-          }
         }
       }
       career_path {

@@ -127,27 +127,10 @@ const StyledLinks = styled.div`
   }
 `;
 
-const Nav = ({ isHome }) => {
+const Nav = ({ isHome, resumeUrl }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
-
-  const {allStrapiPortfolio} = useStaticQuery(graphql`{
-    allStrapiPortfolio(filter: {id:{eq: "d4f7be81-e17a-52ef-bcdf-d537bfa70940"}}) {
-      edges {
-        node {
-          id
-          profile {
-            resume {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-  `)
-  const { url } = allStrapiPortfolio.edges[0].node.profile.resume
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -212,7 +195,7 @@ const Nav = ({ isHome }) => {
                 <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                   <a
                     className="resume-button"
-                    href={process.env.GATSBY_STRAPI_URL + url}
+                    href={process.env.GATSBY_STRAPI_URL + resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

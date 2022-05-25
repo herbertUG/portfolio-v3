@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
-import { useStaticQuery, graphql } from "gatsby"
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
@@ -46,7 +45,7 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location, profile }) => {
-  const { contacts, social_links } = profile
+  const { contacts, social_links, resume } = profile
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
   useEffect(() => {
@@ -96,7 +95,7 @@ const Layout = ({ children, location, profile }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent>
-              <Nav isHome={isHome} />
+              <Nav isHome={isHome} resumeUrl={resume.url}/>
               <Social isHome={isHome} socialMedia={social_links} />
               <Email isHome={isHome} contacts={contacts} />
 
