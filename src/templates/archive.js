@@ -224,6 +224,7 @@ ArchivePage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
+
 export const query = graphql`
   query getPortfolioProjectsByID($id: Int) {
     strapiPortfolio(strapi_id: {eq: $id}) {
