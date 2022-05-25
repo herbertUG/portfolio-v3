@@ -19,6 +19,10 @@ const StyledAboutSection = styled.section`
   }
 `;
 const StyledText = styled.div`
+  .white-bold {
+    color: #6fffe1;
+    font-weight: 500;
+  }
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
