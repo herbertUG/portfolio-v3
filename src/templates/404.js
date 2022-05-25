@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
@@ -26,8 +26,9 @@ const StyledHomeButton = styled(Link)`
   margin-top: 40px;
 `;
 
-const NotFoundPage = ({ location }) => {
+const NotFoundPage = ({ location, data }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const { profile } = data.strapiPortfolio
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
@@ -35,7 +36,7 @@ const NotFoundPage = ({ location }) => {
   }, []);
 
   return (
-    <Layout location={location}>
+    <Layout location={location} profile={profile}>
       <Helmet title="Page Not Found" />
 
       <TransitionGroup component={null}>
@@ -55,6 +56,23 @@ const NotFoundPage = ({ location }) => {
 
 NotFoundPage.propTypes = {
   location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
 
+export const query = graphql`
+  query getPortfolioProfileByID($id: String) {
+    strapiPortfolio(id: {eq: $id}) {
+      id
+      profile {
+        contacts {
+          app
+          data
+        }
+        social_links {
+          name
+          url
+        }
+      }
+    }
+  }`;
 export default NotFoundPage;

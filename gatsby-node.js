@@ -22,6 +22,13 @@ exports.createPages = async ({ actions }) => {
       id: process.env.GATSBY_STRAPI_PORTFOLIO_ID,
     },
   });
+  createPage({
+    path: '/404',
+    component: path.resolve('./src/templates/404.js'),
+    context: {
+      id: process.env.GATSBY_STRAPI_PORTFOLIO_ID,
+    },
+  });
 };
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig

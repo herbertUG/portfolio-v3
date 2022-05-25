@@ -74,13 +74,14 @@ const Footer = () => {
   });
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
-    fetch('https://api.github.com/repos/bchiang7/v4')
+    // if (process.env.NODE_ENV !== 'production') {
+    //   return;
+    // }
+    fetch('https://api.github.com/repos/wwwhickup/portfolio-v3')
       .then((response) => response.json())
       .then((json) => {
         const { stargazers_count, forks_count } = json;
+
         setGitHubInfo({
           stars: stargazers_count,
           forks: forks_count,
