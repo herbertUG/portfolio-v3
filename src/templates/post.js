@@ -33,43 +33,9 @@ const StyledPostContent = styled.div`
   }
 `;
 
-const PostTemplate = ({ data, location }) => {
-  const { frontmatter, html } = data.markdownRemark;
-  const { title, date, tags } = frontmatter;
-
+const PostTemplate = ({ location }) => {
   return (
     <Layout location={location}>
-      <Helmet title={title} />
-
-      <StyledPostContainer>
-        <span className="breadcrumb">
-          <span className="arrow">&larr;</span>
-          <Link to="/pensieve">All memories</Link>
-        </span>
-
-        <StyledPostHeader>
-          <h1 className="medium-heading">{title}</h1>
-          <p className="subtitle">
-            <time>
-              {new Date(date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-            <span>&nbsp;&mdash;&nbsp;</span>
-            {tags &&
-              tags.length > 0 &&
-              tags.map((tag, i) => (
-                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
-                  #{tag}
-                </Link>
-              ))}
-          </p>
-        </StyledPostHeader>
-
-        <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
-      </StyledPostContainer>
     </Layout>
   );
 };
@@ -80,18 +46,3 @@ PostTemplate.propTypes = {
   data: PropTypes.object,
   location: PropTypes.object,
 };
-
-export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $path } }) {
-      html
-      frontmatter {
-        title
-        description
-        date
-        slug
-        tags
-      }
-    }
-  }
-`;

@@ -8,6 +8,8 @@ import { loaderDelay } from '@utils';
 import { useScrollDirection } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
+import { useStaticQuery, graphql } from "gatsby"
+
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -130,6 +132,23 @@ const Nav = ({ isHome }) => {
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
 
+  const {allStrapiPortfolio} = useStaticQuery(graphql`{
+    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
+      edges {
+        node {
+          id
+          profile {
+            resume {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  `)
+  const { url } = allStrapiPortfolio.edges[0].node.profile.resume
+
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
   };
@@ -193,9 +212,10 @@ const Nav = ({ isHome }) => {
                 <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                   <a
                     className="resume-button"
-                    href="/resume.pdf"
+                    href={process.env.GATSBY_STRAPI_URL + url}
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                  >
                     Resume
                   </a>
                 </div>

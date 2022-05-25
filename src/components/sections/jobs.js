@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import moment from 'moment';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
+  max-width: 720px;
 
   .inner {
     display: flex;
@@ -153,30 +155,7 @@ const StyledTabContent = styled.div`
   }
 `;
 
-const Jobs = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/jobs/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              company
-              location
-              range
-              url
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const jobsData = data.jobs.edges;
+const Jobs = ({data}) => {
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -224,9 +203,8 @@ const Jobs = () => {
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={onKeyDown}>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { company } = node.frontmatter;
+          {data &&
+            data.map(({ company_name }, i) => {
               return (
                 <li key={i}>
                   <StyledTabButton
@@ -238,7 +216,7 @@ const Jobs = () => {
                     aria-selected={activeTabId === i ? true : false}
                     aria-controls={`panel-${i}`}
                     tabIndex={activeTabId === i ? '0' : '-1'}>
-                    <span>{company}</span>
+                    <span>{company_name}</span>
                   </StyledTabButton>
                 </li>
               );
@@ -246,11 +224,9 @@ const Jobs = () => {
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
-        {jobsData &&
-          jobsData.map(({ node }, i) => {
-            const { frontmatter, html } = node;
-            const { title, url, company, range } = frontmatter;
-
+        {data &&
+          data.map((company, i) => {
+            const { company_name, company_url, is_present, job_title, overview, start, end } = company
             return (
               <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
                 <StyledTabContent
@@ -261,18 +237,18 @@ const Jobs = () => {
                   aria-hidden={activeTabId !== i}
                   hidden={activeTabId !== i}>
                   <h3>
-                    <span>{title}</span>
+                    <span>{job_title}</span>
                     <span className="company">
                       &nbsp;@&nbsp;
-                      <a href={url} className="inline-link">
-                        {company}
+                      <a href={company_url} className="inline-link">
+                        {company_name}
                       </a>
                     </span>
                   </h3>
 
-                  <p className="range">{range}</p>
+                  <p className="range">{is_present ? `${moment(start).format('MMMM YYYY')} - present` : `${moment(start).format('MMMM YYYY')} - ${moment(end).format('MMMM YYYY')}`} </p>
 
-                  <div dangerouslySetInnerHTML={{ __html: html }} />
+                  <ReactMarkdown children={overview} remarkPlugins={[remarkGfm]} />
                 </StyledTabContent>
               </CSSTransition>
             );

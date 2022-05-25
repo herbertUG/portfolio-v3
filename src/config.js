@@ -1,17 +1,4 @@
 module.exports = {
-  email: 'richardhong33@hotmail.com',
-
-  socialMedia: [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/wwwhickup',
-    },
-    {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/richard-hong-512723201/',
-    },
-  ],
-
   navLinks: [
     {
       name: 'About',

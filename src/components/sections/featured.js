@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
@@ -246,37 +244,8 @@ const StyledProject = styled.div`
   }
 `;
 
-const Featured = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/featured/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              cover {
-                childImageSharp {
-                  fluid(maxWidth: 700, traceSVG: { color: "#64ffda" }) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
-                }
-              }
-              tech
-              github
-              external
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const featuredProjects = data.featured.edges.filter(({ node }) => node);
-
+const Featured = ({data}) => {
+  
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   useEffect(() => {
@@ -291,21 +260,19 @@ const Featured = () => {
       </h2>
 
       <div>
-        {featuredProjects &&
-          featuredProjects.map(({ node }, i) => {
-            const { frontmatter, html } = node;
-            const { external, title, tech, github, cover } = frontmatter;
-
+        {data &&
+          data.map((project, i) => {
+            const { project_name, overview, url, assets, github, stack, is_featured } = project;
+            if(!is_featured) return null
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <p className="project-overline">Featured Project</p>
-                  <h3 className="project-title">{title}</h3>
-                  <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
-
-                  {tech.length && (
+                  <h3 className="project-title">{project_name}</h3>
+                  <div className="project-description">{ overview }</div>
+                  {stack.length && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
+                      {stack.map((tech, i) => (
                         <li key={i}>{tech}</li>
                       ))}
                     </ul>
@@ -317,8 +284,8 @@ const Featured = () => {
                         <Icon name="GitHub" />
                       </a>
                     )}
-                    {external && (
-                      <a href={external} aria-label="External Link" className="external">
+                    {url && (
+                      <a href={url} aria-label="External Link" className="external">
                         <Icon name="External" />
                       </a>
                     )}
@@ -326,8 +293,8 @@ const Featured = () => {
                 </div>
                     
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
-                    <Img fluid={cover.childImageSharp.fluid} alt={title} className="img" />
+                  <a href={url ? url : github ? github : '#'}>
+                    <img  src={process.env.GATSBY_STRAPI_URL + assets.data[0].attributes.url} alt={project_name} className="img" />
                   </a>
                 </div>
               </StyledProject>

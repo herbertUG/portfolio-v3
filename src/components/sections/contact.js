@@ -40,9 +40,10 @@ const StyledContactSection = styled.section`
   }
 `;
 
-const Contact = () => {
+const Contact = ({data}) => {
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+  const [emailAddress] = data.filter(item => item.app === 'email')
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
@@ -55,7 +56,7 @@ const Contact = () => {
         potential project or just to say hi, I'll try my best to answer your email!
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
+      <a className="email-link" href={`mailto:${emailAddress.data}`}>
         Say Hello
       </a>
     </StyledContactSection>
