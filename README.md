@@ -1,49 +1,54 @@
 <div align="center">
   <img alt="Logo" src="https://github.com/wwwhickup/portfolio-v3/blob/master/src/images/logo.png" width="100" />
+  <h1 align="center">
+    Portfolio v2
+  </h1>
 </div>
-<h1 align="center">
-  Richard Hong Portfolio v2
-</h1>
-<p align="center">
-  The fourth iteration of <a href="http://richardhong.epizy.com/" target="_blank">richardhong.epizy.com/</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">epizy free Netlify</a>
-</p>
 
 ## 🚨 Forking this repo (please read!)
-Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
+Many people have contacted me asking me if they can use this code for their own portfolio, and the answer to that question is usually **yes, with attribution**.
 
-I value keeping my site open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
+I value keeping this repo as open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
 
 Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
 
-As a backend, I used [Strapi](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html) Headless CMS. By adding strapi record, you can generate your portfolio website.  If you want to build your portfolio easily then direct contact me via [email](mailto:richardhong33@hotmail.com) or you can find my detail contact from my [portfolio website](http://richardhong.epizy.com)
+As a [backend](https://hickup-portfolio-strapi.herokuapp.com/), I used [Strapi](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html) Headless CMS. By adding strapi record, you can generate your portfolio website.  If you want to build your portfolio easily or have any other questions then create the issue
 
 Also you can use hardcorded static seed either😉
 
-### TL;DR
-
-Yes, you can fork this repo. Please give me proper credit by linking back to [http://richardhong.epizy.com](http://richardhong.epizy.com/demo.png). Thanks!
-
 ## 🛠 Installation & Set Up
+1. Prepare ENV
 
-1. Install the Gatsby CLI
+   ```sh
+    DISCRIPTION=Lorem .....
+    GATSBY_STRAPI_URL=https://hickup-portfolio-strapi.herokuapp.com
+    NAME=FirstName LastName
+    SHORT_NAME=FL
+    SITEURL=https://example.com
+    TELEGRAM_USERNAME=<telegram username or link>
+    TITLE=<project title will show as a page header>
+    GATSBY_STRAPI_PORTFOLIO_ID=<Your profile strapi portfolio collection id>
+   ```
+
+2. Install the Gatsby CLI
 
    ```sh
    npm install -g gatsby-cli
    ```
 
-2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
+3. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
    ```sh
    nvm install
    ```
 
-3. Install dependencies
+4. Install dependencies
 
    ```sh
    yarn
    ```
 
-4. Start the development server
+5. Start the development server
 
    ```sh
    npm start
