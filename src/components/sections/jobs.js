@@ -248,7 +248,7 @@ const Jobs = ({data}) => {
 
                   <p className="range">{is_present ? `${moment(start).format('MMMM YYYY')} - present` : `${moment(start).format('MMMM YYYY')} - ${moment(end).format('MMMM YYYY')}`} </p>
 
-                  <ReactMarkdown children={overview} remarkPlugins={[remarkGfm]} />
+                  <ReactMarkdown children={overview.data.overview} remarkPlugins={[remarkGfm]} />
                 </StyledTabContent>
               </CSSTransition>
             );

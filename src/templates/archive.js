@@ -6,7 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -128,34 +128,9 @@ const StyledTableContainer = styled.div`
   }
 `;
 
-const ArchivePage = ({ location }) => {
-  const {allStrapiPortfolio} = useStaticQuery(graphql`{
-    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
-      edges {
-        node {
-          id
-          projects {
-            project_name
-            overview
-            url
-            is_featured
-            date,
-            company
-            stack {
-              strapi_json_value
-            }
-            assets {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-  `)
+const ArchivePage = ({ location, data }) => {
 
-  const { projects } = allStrapiPortfolio.edges[0].node
-  console.log("projects: ", projects)
+  const { profile, projects } = data.strapiPortfolio
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -167,7 +142,7 @@ const ArchivePage = ({ location }) => {
   }, []);
 
   return (
-    <Layout location={location}>
+    <Layout location={location} profile={profile}>
       <Helmet title="Archive" />
 
       <main>
@@ -210,12 +185,12 @@ const ArchivePage = ({ location }) => {
                       </td>
 
                       <td className="tech hide-on-mobile">
-                        {stack.strapi_json_value.length > 0 &&
-                          stack.strapi_json_value.map((item, i) => (
+                        {JSON.parse(stack.internal.content).length > 0 &&
+                          JSON.parse(stack.internal.content).map((item, i) => (
                             <span key={i}>
                               {item}
                               {''}
-                              {i !== stack.strapi_json_value.length - 1 && <span className="separator">&middot;</span>}
+                              {i !== JSON.parse(stack.internal.content).length - 1 && <span className="separator">&middot;</span>}
                             </span>
                           ))}
                       </td>
@@ -246,6 +221,37 @@ const ArchivePage = ({ location }) => {
 };
 ArchivePage.propTypes = {
   location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
+
+export const query = graphql`
+  query getPortfolioProjectsByID($id: String) {
+    strapiPortfolio(id: {eq: $id}) {
+      id
+      profile {
+        contacts {
+          app
+          data
+        }
+        social_links {
+          name
+          url
+        }
+      }
+      projects {
+        company
+        date
+        overview
+        project_name
+        url
+        is_featured
+        stack {
+          internal {
+            content
+          }
+        }
+      }
+    }
+  }`;
 
 export default ArchivePage;

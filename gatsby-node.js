@@ -5,34 +5,23 @@
  */
 
 const path = require('path');
-const _ = require('lodash');
-const axios = require('axios');
-const qs = require('qs')
-const STRAPI_URL = process.env.GATSBY_STRAPI_URL
 
-const fetchFromStrapi = (apiId, query = '') => {
-  return axios.get(`${STRAPI_URL}/api/${apiId}/${query}`)
-}
-
-exports.createPages = async ({ actions, graphql, reporter }) => {
+exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
-  const query = qs.stringify({
-    populate: {
-      profile: { populate: '*' },
-      career_path: { populate: '*' },
-      projects: { populate: '*' }
-    } 
-  }, {
-    encodeValuesOnly: true,
-  });
-  const profile = await fetchFromStrapi('portfolios', `1?${query}`)
   createPage({
     path: '/',
     component: path.resolve('./src/templates/profile.js'),
     context: {
-      ...profile.data
+      id: process.env.GATSBY_STRAPI_PORTFOLIO_ID,
     },
-  })
+  });
+  createPage({
+    path: '/archive',
+    component: path.resolve('./src/templates/archive.js'),
+    context: {
+      id: process.env.GATSBY_STRAPI_PORTFOLIO_ID,
+    },
+  });
 };
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig

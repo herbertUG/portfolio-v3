@@ -45,31 +45,8 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({ children, location }) => {
-  const {allStrapiPortfolio} = useStaticQuery(graphql`{
-    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
-      edges {
-        node {
-          id
-          profile {
-            id
-            first_name
-            last_name
-            contacts {
-              app
-              data
-            }
-            social_links {
-              name
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-  `)
-  const { contacts, social_links } = allStrapiPortfolio.edges[0].node.profile
+const Layout = ({ children, location, profile }) => {
+  const { contacts, social_links } = profile
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
   useEffect(() => {
@@ -138,6 +115,7 @@ const Layout = ({ children, location }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
 

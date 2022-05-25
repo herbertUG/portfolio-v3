@@ -245,7 +245,7 @@ const StyledProject = styled.div`
 `;
 
 const Featured = ({data}) => {
-  
+
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   useEffect(() => {
@@ -291,10 +291,10 @@ const Featured = ({data}) => {
                     )}
                   </div>
                 </div>
-                    
+
                 <div className="project-image">
                   <a href={url ? url : github ? github : '#'}>
-                    <img  src={process.env.GATSBY_STRAPI_URL + assets.data[0].attributes.url} alt={project_name} className="img" />
+                    <img  src={process.env.GATSBY_STRAPI_URL + assets[0].url} alt={project_name} className="img" />
                   </a>
                 </div>
               </StyledProject>

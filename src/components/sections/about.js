@@ -132,16 +132,16 @@ const About = ({data}) => {
       <div className="inner">
         <StyledText>
           <div>
-            <ReactMarkdown children={data.overview} remarkPlugins={[remarkGfm]} />
+            <ReactMarkdown children={data.overview.data.overview} remarkPlugins={[remarkGfm]} />
           </div>
           <ul className="skills-list">
-            {data.skills.frontEnd && data.skills.frontEnd.map((skill, i) => <li key={i}>{skill}</li>)}
+            {data.skills.internal.content && JSON.parse(data.skills.internal.content).frontEnd.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
         </StyledText>
 
         <StyledPic>
           <div className="wrapper">
-            <img src={process.env.GATSBY_STRAPI_URL + data.avatar.data.attributes.url} alt="Avatar" className="img" />
+            <img src={process.env.GATSBY_STRAPI_URL + data.avatar.url} alt="Avatar" className="img" />
           </div>
         </StyledPic>
       </div>

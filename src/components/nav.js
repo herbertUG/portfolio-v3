@@ -133,7 +133,7 @@ const Nav = ({ isHome }) => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
 
   const {allStrapiPortfolio} = useStaticQuery(graphql`{
-    allStrapiPortfolio(filter: {profile: {first_name: {eq: "Richard"}}}) {
+    allStrapiPortfolio(filter: {id:{eq: "d4f7be81-e17a-52ef-bcdf-d537bfa70940"}}) {
       edges {
         node {
           id
