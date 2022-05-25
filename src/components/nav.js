@@ -210,7 +210,7 @@ const Nav = ({ isHome, resumeUrl }) => {
         <TransitionGroup component={null}>
           {isMounted && (
             <CSSTransition classNames={fadeClass} timeout={timeout}>
-              <Menu />
+              <Menu resumeUrl={resumeUrl}/>
             </CSSTransition>
           )}
         </TransitionGroup>
