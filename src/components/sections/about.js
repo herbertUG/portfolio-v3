@@ -141,7 +141,7 @@ const About = ({data}) => {
 
         <StyledPic>
           <div className="wrapper">
-            <img src={process.env.GATSBY_STRAPI_URL + data.avatar.url} alt="Avatar" className="img" />
+            <img src={data.avatar.url} alt="Avatar" className="img" />
           </div>
         </StyledPic>
       </div>
