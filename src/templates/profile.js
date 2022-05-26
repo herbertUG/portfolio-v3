@@ -79,6 +79,8 @@ export const query = graphql`
         overview
         project_name
         url
+        github
+        YouTube
         is_featured
         stack {
           internal {

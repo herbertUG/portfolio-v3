@@ -170,10 +170,14 @@ const ArchivePage = ({ location, data }) => {
                     overview,
                     url,
                     github,
+                    YouTube,
                     stack,
                     date,
                     company
                   } = project;
+                  console.log("project: ", project)
+                  const techs = stack ? JSON.parse(stack.internal.content) : []
+
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -185,12 +189,12 @@ const ArchivePage = ({ location, data }) => {
                       </td>
 
                       <td className="tech hide-on-mobile">
-                        {JSON.parse(stack.internal.content).length > 0 &&
-                          JSON.parse(stack.internal.content).map((item, i) => (
+                        {techs.length > 0 &&
+                          techs.map((item, i) => (
                             <span key={i}>
                               {item}
                               {''}
-                              {i !== JSON.parse(stack.internal.content).length - 1 && <span className="separator">&middot;</span>}
+                              {i !== techs.length - 1 && <span className="separator">&middot;</span>}
                             </span>
                           ))}
                       </td>
@@ -205,6 +209,11 @@ const ArchivePage = ({ location, data }) => {
                           {github && (
                             <a href={github} aria-label="GitHub Link">
                               <Icon name="GitHub" />
+                            </a>
+                          )}
+                          {YouTube && (
+                            <a href={YouTube} aria-label="GitHub Link">
+                              <Icon name="YouTube" />
                             </a>
                           )}
                         </div>
@@ -248,6 +257,8 @@ export const query = graphql`
         overview
         project_name
         url
+        github
+        YouTube
         is_featured
         stack {
           internal {

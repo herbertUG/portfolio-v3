@@ -169,6 +169,8 @@ const Projects = ({data}) => {
         {projectsToShow &&
           projectsToShow.map((project, i) => {
             const { is_featured, project_name, overview, url, github, stack } = project
+            const techs = stack ? JSON.parse(stack.internal.content) : []
+
             if(is_featured) return null
 
             return (
@@ -210,9 +212,9 @@ const Projects = ({data}) => {
                     </header>
 
                     <footer>
-                      {stack.length && (
+                      {techs.length && (
                         <ul className="project-tech-list">
-                          {stack.map((tech, i) => (
+                          {techs.map((tech, i) => (
                             <li key={i}>{tech}</li>
                           ))}
                         </ul>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
+import { YouTube } from '../icons';
 
 const StyledProject = styled.div`
   display: grid;
@@ -262,7 +263,8 @@ const Featured = ({data}) => {
       <div>
         {data &&
           data.map((project, i) => {
-            const { project_name, overview, url, assets, github, stack, is_featured } = project;
+            const { project_name, overview, url, assets, github, YouTube, stack, is_featured } = project;
+            const techs = stack ? JSON.parse(stack.internal.content) : []
             if(!is_featured) return null
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -270,9 +272,9 @@ const Featured = ({data}) => {
                   <p className="project-overline">Featured Project</p>
                   <h3 className="project-title">{project_name}</h3>
                   <div className="project-description">{ overview }</div>
-                  {stack.length && (
+                  {techs.length && (
                     <ul className="project-tech-list">
-                      {stack.map((tech, i) => (
+                      {techs.map((tech, i) => (
                         <li key={i}>{tech}</li>
                       ))}
                     </ul>
@@ -282,6 +284,11 @@ const Featured = ({data}) => {
                     {github && (
                       <a href={github} aria-label="GitHub Link">
                         <Icon name="GitHub" />
+                      </a>
+                    )}
+                    {YouTube && (
+                      <a href={YouTube} aria-label="GitHub Link">
+                        <Icon name="YouTube" />
                       </a>
                     )}
                     {url && (
