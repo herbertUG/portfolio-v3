@@ -175,7 +175,6 @@ const ArchivePage = ({ location, data }) => {
                     date,
                     company
                   } = project;
-                  console.log("project: ", project)
                   const techs = stack ? JSON.parse(stack.internal.content) : []
 
                   return (
