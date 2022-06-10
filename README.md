@@ -1,7 +1,7 @@
 <div align="center">
   <img alt="Logo" src="https://github.com/wwwhickup/portfolio-v3/blob/master/src/images/logo.png" width="100" />
   <h1 align="center">
-    Portfolio v2
+    Portfolio v3
   </h1>
 </div>
 
