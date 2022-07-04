@@ -6,7 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
-import { graphql } from "gatsby"
+import userDetails from '../../userDetails.json';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -128,9 +128,9 @@ const StyledTableContainer = styled.div`
   }
 `;
 
-const ArchivePage = ({ location, data }) => {
+const ArchivePage = ({ location }) => {
 
-  const { profile, projects } = data.strapiPortfolio
+  const { profile, projects } = userDetails;
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -231,41 +231,5 @@ ArchivePage.propTypes = {
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 };
-
-
-export const query = graphql`
-  query getPortfolioProjectsByID($id: Int) {
-    strapiPortfolio(strapi_id: {eq: $id}) {
-      id
-      profile {
-        contacts {
-          app
-          data
-        }
-        social_links {
-          name
-          url
-        }
-        resume {
-          url
-        }
-      }
-      projects {
-        company
-        date
-        overview
-        project_name
-        url
-        github
-        YouTube
-        is_featured
-        stack {
-          internal {
-            content
-          }
-        }
-      }
-    }
-  }`;
 
 export default ArchivePage;

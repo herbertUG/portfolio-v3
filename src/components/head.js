@@ -2,32 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
+import userDetails from '../../userDetails.json'
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
 const Head = ({ title, description }) => {
   const { pathname } = useLocation();
 
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultTitle: title
-            defaultDescription: description
-            siteUrl
-          }
-        }
-      }
-    `,
-  );
-
   const {
     defaultTitle,
     defaultDescription,
     siteUrl,
-  } = site.siteMetadata;
+  } = userDetails.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,

@@ -11,23 +11,23 @@ exports.createPages = async ({ actions }) => {
   createPage({
     path: '/',
     component: path.resolve('./src/templates/profile.js'),
-    context: {
-      id: parseInt(process.env.GATSBY_STRAPI_PORTFOLIO_ID, 10),
-    },
+    // context: {
+    //   id: parseInt(process.env.GATSBY_STRAPI_PORTFOLIO_ID, 10),
+    // },
   });
   createPage({
     path: '/archive',
     component: path.resolve('./src/templates/archive.js'),
-    context: {
-      id: parseInt(process.env.GATSBY_STRAPI_PORTFOLIO_ID, 10),
-    },
+    // context: {
+    //   id: parseInt(process.env.GATSBY_STRAPI_PORTFOLIO_ID, 10),
+    // },
   });
   createPage({
     path: '/404',
     component: path.resolve('./src/templates/404.js'),
-    context: {
-      id: parseInt(process.env.GATSBY_STRAPI_PORTFOLIO_ID, 10),
-    },
+    // context: {
+    //   id: parseInt(process.env.GATSBY_STRAPI_PORTFOLIO_ID, 10),
+    // },
   });
 };
 

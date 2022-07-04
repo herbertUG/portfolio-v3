@@ -1,0 +1,299 @@
+{
+  "profile": {
+      "first_name": "Richard",
+      "last_name": "Hong",
+      "title": "I build things for the web.",
+      "birth": "1993-03-03",
+      "header_line": "I'm a software engineer based in Hong Kong specializing in building (and occasionally designing) exceptional , high-quality web & mobile(RN) applications.",
+      "avatar": {
+          "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537661/IMG_2725_89c0e658ca.jpg"
+      },
+      "skills": {
+          "internal": {
+              "content": "[\"JavaScript (ES6+)\",\"React, Next.js\",\"React Native\",\"Vue, Vuex, Nuxt.js\",\"Angular\",\"Node.js, Express.js\",\"GraphQL, Apollo\",\"PHP, Laravel\",\"Python, Django\",\"MySQL, MongoDB\",\"DevOps, AWS, Firebase\",\"Git, Docker, Vercel\"]"
+          }
+      },
+      "overview": {
+          "data": {
+              "overview": "Hello! I'm Richard, a software engineer based in Hong Kong.\n\n**Now I am in the career change to Smart Contract and DApp engineer.**\n\nI was a Front End developer with over 8 years of experience who is proficient in cutting edge web technologies like React/Redux, Next.js, Gatsby.js, Vue.js, Nuxt.js, TypeScript, Node.js/Express.js and much more.\n\nOne of my strong points is integrating 3rd party API such as social(Facebook, Twitter, Gmail), Firebase, Twillio, Payment Gateway, Quickbooks, OAuth, AuthO, WebRTC and integrating AWS(Lambda, DynamoDB, EC2, S3, Elastic Beanstalk, Amplify, Cognito).\n\nShortly after graduating from Kosin University, I joined the e-Perfect IT Company. Here are a few technologies I've been working with recently:"
+          }
+      },
+      "contacts": [
+          {
+              "app": "email",
+              "data": "richardhong33@hotmail.com"
+          },
+          {
+              "app": "mobile",
+              "data": "+86 153 6098 7392"
+          },
+          {
+              "app": "skype",
+              "data": "live:.cid.402f14918453f21a"
+          },
+          {
+              "app": "whatsapp",
+              "data": "+86 153 6098 7392"
+          },
+          {
+              "app": "telegram",
+              "data": "@jena303"
+          }
+      ],
+      "social_links": [
+          {
+              "name": "External",
+              "url": "https://richard-profile.herokuapp.com/"
+          },
+          {
+              "name": "Linkedin",
+              "url": "https://www.linkedin.com/in/richard-hong-512723201/"
+          },
+          {
+              "name": "GitHub",
+              "url": "https://github.com/wwwhickup"
+          },
+          {
+              "name": "star",
+              "url": "https://angel.co/u/richard-hong-11"
+          }
+      ],
+      "resume": {
+          "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1655301639/Richard_Hong_b2f2f90c88.pdf"
+      }
+  },
+  "career_path": [
+      {
+          "end": null,
+          "company_url": "https://www.multiverse.ai",
+          "company_name": "Multiverse Lab",
+          "is_present": true,
+          "job_title": "Web3 Engineer",
+          "start": "2021-10-01",
+          "strapi_id": 2,
+          "overview": {
+              "data": {
+                  "overview": "- Worked on the Fanpop.com mobile version project by using React Native Expo\n- Worked on the one of the company side project (Multiverse Image App). This is Linux desktop application by using ElectronJS"
+              }
+          }
+      },
+      {
+          "end": "2021-08-01",
+          "company_url": null,
+          "company_name": "DCNine web solution",
+          "is_present": false,
+          "job_title": "Senior FrontEnd engineer",
+          "start": "2019-05-01",
+          "strapi_id": 1,
+          "overview": {
+              "data": {
+                  "overview": "- Employed mastery of front-end languages (JavaScript, CSS, HTML5, React, React Native, Vue) in collaboration with web designers to create user-oriented visuals and features, increasing site traffic by 2,000 visitors per month.\n- Developed over 3 large websites and 3 apps.\n- Managed a team of 3 freelancer web developers and designers, trained and educated other web developers; measured the performance of the team."
+              }
+          }
+      },
+      {
+          "end": "2020-04-01",
+          "company_url": "https://oculusalerts.com/",
+          "company_name": "Oculusalerts",
+          "is_present": false,
+          "job_title": "Full stack developer",
+          "start": "2019-10-01",
+          "strapi_id": 3,
+          "overview": {
+              "data": {
+                  "overview": "- Responsible for creating, designing, and reviewing Web site by gathering business specifications, the Agile Scrum Application Development Methodology adopted.\n- Using Figma for the company's new sub-service (proxy service) UI/UX design\n- Project planning documents assumptions, functional requirements, product features, and programmer specifications. Recommend operational and process improvements based on efficiencies and available technologies.\n- Used naming service to hide the backend proxy provider endpoint.\n- retrieve all of the proxy endpoints provider market prices (packetstream.io, smartproxy.com)\n- integrate with Discord Auth API to implement social login in the system.\n- Stripe and PayPal payment Gateway integrate"
+              }
+          }
+      },
+      {
+          "end": "2019-03-01",
+          "company_url": "https://jlouis.com/",
+          "company_name": "J. Louis Technology, Inc",
+          "is_present": false,
+          "job_title": "Fullstack developer",
+          "start": "2017-10-01",
+          "strapi_id": 4,
+          "overview": {
+              "data": {
+                  "overview": "- Research, UI/UX design and implement technical specifications for the product based on client requirement\n- Ensure projects are built to meet performance, security, and functional client requirements.\n- Stay up-to-date on industry standards and incorporate them appropriately.\n- Assist with testing, debugging, documentation, and overall quality assurance of projects.\n- Involved in the requirement analysis, design, development, review, deployment as well as in the testing of the product.\n- After service for individual client and upgrade website based on client desired feature.\n- Used Git for code management tool and used Asana for task management and used Slack for the team meetings."
+              }
+          }
+      },
+      {
+          "end": "2017-06-01",
+          "company_url": "https://www.mumblit.com",
+          "company_name": "Mumblit",
+          "is_present": false,
+          "job_title": "FrontEnd Developer",
+          "start": "2015-09-01",
+          "strapi_id": 9,
+          "overview": {
+              "data": {
+                  "overview": "- Involved in the development and programming of a modern website, utilizing React, HTML, Bootstrap, CSS, and JavaScript.\n- Designed UI using Material UI framework, configured the routing service using React, using Axios to fetch the data from the server and took part in creating custom reusable components."
+              }
+          }
+      }
+  ],
+  "projects": [
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537657/fanpop_c7ce4a3419.webp"
+              }
+          ],
+          "company": "Multiverse Lab",
+          "date": "2021-11-04",
+          "overview": "Fanpop is one of the social platforms that was published in 2008🙀. The tech stack is Ruby on Rails, AWS, and PostgreSQL. I built the mobile application by using React Native Expo and GCP(Google Cloud Platform).",
+          "project_name": "Fanpop",
+          "url": "https://fanpop.com",
+          "github": null,
+          "YouTube": null,
+          "is_featured": true,
+          "stack": {
+              "internal": {
+                  "content": "[\"React.js\",\"TypeScript\",\"React Native Expo\",\"Node\",\"GCP(Google Cloud platform)\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537658/genie_ff2ed8875b.png"
+              }
+          ],
+          "company": "BSG",
+          "date": "2021-04-30",
+          "overview": "This project goal is to provide the B2B financial solution and as a middleware to be a bridge between the buyer, seller, and funder company and also proven all of the business workout and history by store these on Decentralized storage(Blockchain)",
+          "project_name": "Genie Financial solution",
+          "url": "https://v3.geniefinance.tech",
+          "github": null,
+          "YouTube": null,
+          "is_featured": true,
+          "stack": {
+              "internal": {
+                  "content": "[\"Vue 3\",\"JavaScript\",\"VueX\",\"Azure\",\"Tailwind\",\"Web3\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537657/autoez_30ccd4199c.webp"
+              }
+          ],
+          "company": "Codesushi",
+          "date": "2021-02-03",
+          "overview": "This is one of the shopping websites that provides a couple of smart wallets. By using GatsbyJS and Strapi Headless CMS we built the static website but the website content, mini style, and layout are manageable by updating Strapi content.",
+          "project_name": "eCommerce ekster",
+          "url": "https://ekster.com/",
+          "github": null,
+          "YouTube": null,
+          "is_featured": false,
+          "stack": {
+              "internal": {
+                  "content": "[\"Strapi Headless CMS\",\"Gatsby.js\",\"Node.js\",\"Express\",\"Shopify + GraphQL\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537663/lotic_73090041eb.png"
+              }
+          ],
+          "company": "DCNine Web Solution",
+          "date": "2020-04-30",
+          "overview": "Lotic is a behavior change company delivering Enhanced Human Insights (EHI).",
+          "project_name": "Lotic",
+          "url": "https://lotic.ai",
+          "github": null,
+          "YouTube": null,
+          "is_featured": true,
+          "stack": {
+              "internal": {
+                  "content": "[\"TypeScript\",\"AWS (CDK Lambda, S3, CloudFront, DynamoDB)\",\"React Native Expo\",\"Vercel\",\"React\",\"Styled Component\",\"Redux\",\"Storybook\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537657/autoez_30ccd4199c.webp"
+              }
+          ],
+          "company": "DCNine Websolution",
+          "date": "2019-01-08",
+          "overview": "AutoEz is a Car dealing website. Users can just buy their car at their best price. Developed this project with React and I used functional components and hooks in this project. For the CSS framework, we used React Bootstrap.",
+          "project_name": "Autoez",
+          "url": "https://autoez.com/",
+          "github": null,
+          "YouTube": null,
+          "is_featured": true,
+          "stack": {
+              "internal": {
+                  "content": "[\"React.js\",\"Hook\",\"Context\",\"Node\",\"MongoDB Atlas\",\"Third party API integration\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537658/legiit_8437dd8573.webp"
+              }
+          ],
+          "company": "J. Louis",
+          "date": "2017-05-24",
+          "overview": "An online marketing platform like Fiverr and Upwork.",
+          "project_name": "Online Marketing place",
+          "url": "https://legiit.com/",
+          "github": null,
+          "YouTube": null,
+          "is_featured": false,
+          "stack": {
+              "internal": {
+                  "content": "[\"PHP\",\"Laravel\",\"MS SQL\",\"AWS\",\"Socket.io\",\"Payment Gatsway integration\",\"API integration\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537658/leadworx_com_a5074b58df.webp"
+              }
+          ],
+          "company": "J. Louis",
+          "date": "2018-05-09",
+          "overview": "This is a Website Visitor Tracking Software for B2Bs. The website identifies companies browsing anonymously through your site and engages decision-makers on multiple channels, automatically. It can help the company can know their customers and website visitors.",
+          "project_name": "LeadWorx",
+          "url": "https://leadworx.com/",
+          "github": null,
+          "YouTube": null,
+          "is_featured": false,
+          "stack": {
+              "internal": {
+                  "content": "[\"React.js\",\"Chart.js\",\"Google Analytics\",\"Nginx\"]"
+              }
+          }
+      },
+      {
+          "assets": [
+              {
+                  "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537659/vipkid_com_0aaa73f22a.webp"
+              }
+          ],
+          "company": "J. Louis",
+          "date": "2016-05-10",
+          "overview": "Online video education website. It makes education more accessible by connecting students and teachers around the world.",
+          "project_name": "Vipkid",
+          "url": "https://vipkid.com/",
+          "github": null,
+          "YouTube": null,
+          "is_featured": false,
+          "stack": {
+              "internal": {
+                  "content": "[\"Vue.js\",\"Nuxt.js\",\"Node.js\",\"Google Analysis\"]"
+              }
+          }
+      }
+  ]
+}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
+import userDetails from '../../userDetails.json';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -29,7 +30,7 @@ const StyledHomeButton = styled(Link)`
 const NotFoundPage = ({ location, data }) => {
 
   const [isMounted, setIsMounted] = useState(false);
-  const { profile } = data.strapiPortfolio
+  const { profile } = userDetails
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
@@ -60,23 +61,4 @@ NotFoundPage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export const query = graphql`
-  query getPortfolioProfileByID($id: Int) {
-    strapiPortfolio(strapi_id: {eq: $id}) {
-      id
-      profile {
-        contacts {
-          app
-          data
-        }
-        social_links {
-          name
-          url
-        }
-        resume {
-          url
-        }
-      }
-    }
-  }`;
 export default NotFoundPage;
