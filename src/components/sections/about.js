@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
@@ -117,8 +117,7 @@ const StyledPic = styled.div`
   }
 `;
 
-const About = ({data}) => {
-
+function About({ data }) {
   const revealContainer = useRef(null);
 
   useEffect(() => {
@@ -147,6 +146,6 @@ const About = ({data}) => {
       </div>
     </StyledAboutSection>
   );
-};
+}
 
 export default About;

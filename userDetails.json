@@ -6,16 +6,16 @@
     "birth": "1994-09-12",
     "header_line": "I'm a software engineer based in Kampala specializing in building (and occasionally designing) exceptional , high-quality web & mobile(RN/Flutter) applications.",
     "avatar": {
-        "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1653537661/IMG_2725_89c0e658ca.jpg"
+        "url": "https://res.cloudinary.com/herbertug/image/upload/v1656927258/porfolio/_1260641_gdac5d.jpg"
     },
     "skills": {
         "internal": {
-            "content": "[\"JavaScript (ES6+)\",\"React, Next.js\",\"React Native\",\"Vue, Vuex, Nuxt.js\",\"Angular\",\"Node.js, Express.js\",\"GraphQL, Apollo\",\"PHP, Laravel\",\"Python, Django\",\"MySQL, MongoDB\",\"DevOps, AWS, Firebase\",\"Git, Docker, Vercel\"]"
+            "content": "[\"JavaScript (ES5, ES6+)\",\"React, Next.js\",\"React Native, Flutter\",\"Vue, Vuex, Nuxt.js\",\"Angular\",\"Node.js, Express.js\",\"GraphQL, Apollo\",\"PHP, Laravel, Yii\",\"Python, Django\",\"MySQL, MongoDB\",\"DevOps, AWS, Firebase\",\"Git, Docker, Vercel\"]"
         }
     },
     "overview": {
         "data": {
-            "overview": "Hello! I'm Richard, a software engineer based in Hong Kong.\n\n**Now I am in the career change to Smart Contract and DApp engineer.**\n\nI was a Front End developer with over 8 years of experience who is proficient in cutting edge web technologies like React/Redux, Next.js, Gatsby.js, Vue.js, Nuxt.js, TypeScript, Node.js/Express.js and much more.\n\nOne of my strong points is integrating 3rd party API such as social(Facebook, Twitter, Gmail), Firebase, Twillio, Payment Gateway, Quickbooks, OAuth, AuthO, WebRTC and integrating AWS(Lambda, DynamoDB, EC2, S3, Elastic Beanstalk, Amplify, Cognito).\n\nShortly after graduating from Kosin University, I joined the e-Perfect IT Company. Here are a few technologies I've been working with recently:"
+            "overview": "Hello! I'm Herbert, a software engineer based in Kampala, Uganda.\n\n**I am currently learning Golang, blockchain and web3.**\n\nI have been a working as a Full Stack developer for the past 5 years in a professional setting and proficient in cutting edge web technologies like Angular, Vue.js, Nuxt.js, React/Redux, Typescript, Node.js/Express, Next.js and much more.\n\nShortly after graduating from Kosin University, I joined the e-Perfect IT Company. Here are a few technologies I've been working with recently:"
         }
     },
     "contacts": [
@@ -37,7 +37,7 @@
         },
         {
             "app": "telegram",
-            "data": "@jena303"
+            "data": "@herbertug"
         }
     ],
     "social_links": [
