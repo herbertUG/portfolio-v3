@@ -39,7 +39,7 @@ const StyledHeroSection = styled.section`
   }
 `;
 
-const Hero = ({data}) => {
+function Hero({ data }) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -48,7 +48,12 @@ const Hero = ({data}) => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">{`${data.first_name} ${data.last_name}`}.</h2>;
+  const two = (
+    <h2 className="big-heading">
+      {`${data.first_name} ${data.last_name}`}
+      .
+    </h2>
+  );
   const three = <h3 className="big-heading">{data.title}</h3>;
   const four = (
     <p>
@@ -56,7 +61,7 @@ const Hero = ({data}) => {
     </p>
   );
   const five = (
-    <a href={`mailto:${email}`} className="email-link">
+    <a href={`mailto:${data.email}`} className="email-link">
       Get In Touch
     </a>
   );
@@ -66,8 +71,8 @@ const Hero = ({data}) => {
   return (
     <StyledHeroSection>
       <TransitionGroup component={null}>
-        {isMounted &&
-          items.map((item, i) => (
+        {isMounted
+          && items.map((item, i) => (
             <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
               <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
             </CSSTransition>
@@ -75,6 +80,6 @@ const Hero = ({data}) => {
       </TransitionGroup>
     </StyledHeroSection>
   );
-};
+}
 
 export default Hero;

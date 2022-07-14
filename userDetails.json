@@ -1,117 +1,118 @@
 {
-  "profile": {
-    "first_name": "Herbert Bruno",
-    "last_name": "Oketa Yot",
-    "title": "I build things for the web.",
-    "birth": "1994-09-12",
-    "header_line": "I'm a software engineer based in Kampala specializing in building (and occasionally designing) exceptional , high-quality web & mobile(RN/Flutter) applications.",
-    "avatar": {
-        "url": "https://res.cloudinary.com/herbertug/image/upload/v1656927258/porfolio/_1260641_gdac5d.jpg"
-    },
-    "skills": {
-        "internal": {
-            "content": "[\"JavaScript (ES5, ES6+)\",\"React, Next.js\",\"React Native, Flutter\",\"Vue, Vuex, Nuxt.js\",\"Angular\",\"Node.js, Express.js\",\"GraphQL, Apollo\",\"PHP, Laravel, Yii\",\"Python, Django\",\"MySQL, MongoDB\",\"DevOps, AWS, Firebase\",\"Git, Docker, Vercel\"]"
-        }
-    },
-    "overview": {
-        "data": {
-            "overview": "Hello! I'm Herbert, a software engineer based in Kampala, Uganda.\n\n**I am currently learning Golang, blockchain and web3.**\n\nI have been a working as a Full Stack developer for the past 5 years in a professional setting and proficient in cutting edge web technologies like Angular, Vue.js, Nuxt.js, React/Redux, Typescript, Node.js/Express, Next.js and much more.\n\nShortly after graduating from Kosin University, I joined the e-Perfect IT Company. Here are a few technologies I've been working with recently:"
-        }
-    },
-    "contacts": [
-        {
-            "app": "email",
-            "data": "herbertoketayot@gmail.com"
-        },
-        {
-            "app": "mobile",
-            "data": "+256 759 853 128"
-        },
-        {
-            "app": "skype",
-            "data": "live:herbertoketayot"
-        },
-        {
-            "app": "whatsapp",
-            "data": "+256 759 853 128"
-        },
-        {
-            "app": "telegram",
-            "data": "@herbertug"
-        }
-    ],
-    "social_links": [
-        {
-            "name": "External",
-            "url": "https://herbertug.dev/"
-        },
-        {
-            "name": "Linkedin",
-            "url": "https://www.linkedin.com/in/herbertug/"
-        },
-        {
-            "name": "GitHub",
-            "url": "https://github.com/herbertUG"
-        },
-        {
-            "name": "star",
-            "url": "https://angel.co/u/herbertug"
-        }
-    ],
-    "resume": {
-        "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1655301639/Richard_Hong_b2f2f90c88.pdf"
+"profile": {
+"first_name": "Herbert Bruno",
+"last_name": "Oketa Yot",
+"title": "I build things for the web.",
+"birth": "1994-09-12",
+"header_line": "I'm a software engineer based in Kampala, Uganda specializing in building exceptional , high-quality web & mobile(React Native) applications.",
+"email":"herbertoketayot@gmail.com",
+"avatar": {
+    "url": "https://res.cloudinary.com/herbertug/image/upload/v1656929562/porfolio/Screenshot_2022-06-03_at_1.29.10_PM_q4catj.png"
+},
+"skills": {
+    "internal": {
+        "content": "[\"JavaScript (ES5, ES6+)\",\"React, Next.js\",\"React Native\",\"Vue, Vuex, Nuxt.js\",\"Angular\",\"Node.js, Express.js\",\"GraphQL, Apollo\",\"PHP, Laravel, Yii\",\"Python, Django\",\"MySQL, MongoDB\",\"DevOps, AWS, Firebase\",\"Git, Docker, Vercel\"]"
     }
+},
+"overview": {
+    "data": {
+        "overview": "Hello! I'm Herbert, a software engineer based in Kampala, Uganda.\n\n**I am currently learning Golang, blockchain and web3.**\n\nI have been a working as a Full Stack developer for the past 5 years in a professional setting and proficient in cutting edge web technologies like Angular, Vue.js, Nuxt.js, React/Redux, Typescript, Node.js/Express, Next.js and much more.\n\nShortly after graduating from Kosin University, I joined the e-Perfect IT Company. Here are a few technologies I've been working with recently:"
+    }
+},
+"contacts": [
+    {
+        "app": "email",
+        "data": "herbertoketayot@gmail.com"
+    },
+    {
+        "app": "mobile",
+        "data": "+256 759 853 128"
+    },
+    {
+        "app": "skype",
+        "data": "live:herbertoketayot"
+    },
+    {
+        "app": "whatsapp",
+        "data": "+256 759 853 128"
+    },
+    {
+        "app": "telegram",
+        "data": "@herbertug"
+    }
+],
+"social_links": [
+    {
+        "name": "External",
+        "url": "https://www.herbertug.dev/"
+    },
+    {
+        "name": "Linkedin",
+        "url": "https://www.linkedin.com/in/herbertug/"
+    },
+    {
+        "name": "GitHub",
+        "url": "https://www.github.com/herbertUG"
+    },
+    {
+        "name": "star",
+        "url": "https://angel.co/u/herbertug"
+    }
+],
+"resume": {
+    "url": "https://res.cloudinary.com/dtxzvbe0y/image/upload/v1656927287/porfolio/Herbert_s_Resume_syi5pd.pdf"
+}
 },
 "career_path": [
     {
-        "end": null,
-        "company_url": "https://www.multiverse.ai",
-        "company_name": "Multiverse Lab",
-        "is_present": true,
-        "job_title": "Web3 Engineer",
+        "end": "2022-05-30",
+        "company_url": "https://www.leveltenenergy.com/",
+        "company_name": "LevelTen Energy",
+        "is_present": false,
+        "job_title": "Senior FullStack Developer",
         "start": "2021-10-01",
         "strapi_id": 2,
         "overview": {
             "data": {
-                "overview": "- Worked on the Fanpop.com mobile version project by using React Native Expo\n- Worked on the one of the company side project (Multiverse Image App). This is Linux desktop application by using ElectronJS"
+                "overview": "- Worked on the LevelTen Energy marketplace project\n- Attended Project plannings and meetings. This is Linux desktop application by using ElectronJS"
             }
         }
     },
     {
-        "end": "2021-08-01",
-        "company_url": null,
-        "company_name": "DCNine web solution",
+        "end": "2021-09-01",
+        "company_url": "http://ucglobalprograms.org/uganda",
+        "company_name": "Global Programs for Research & Training",
         "is_present": false,
-        "job_title": "Senior FrontEnd engineer",
-        "start": "2019-05-01",
+        "job_title": "FrontEnd Developer",
+        "start": "2021-03-01",
         "strapi_id": 1,
         "overview": {
             "data": {
-                "overview": "- Employed mastery of front-end languages (JavaScript, CSS, HTML5, React, React Native, Vue) in collaboration with web designers to create user-oriented visuals and features, increasing site traffic by 2,000 visitors per month.\n- Developed over 3 large websites and 3 apps.\n- Managed a team of 3 freelancer web developers and designers, trained and educated other web developers; measured the performance of the team."
+                "overview": "- Main focus was working in the OHRI project, leveraging OpenMRS 3.0 platform.\n- Main role was to develop components for using IBM's Carbon Design System.\n- Took part in dveloping the custom form builder.\n- Made contributions to OpenMRS 3.0."
             }
         }
     },
     {
-        "end": "2020-04-01",
-        "company_url": "https://oculusalerts.com/",
-        "company_name": "Oculusalerts",
+        "end": "2020-06-01",
+        "company_url": null,
+        "company_name": "Fairventures Worldwide",
         "is_present": false,
-        "job_title": "Full stack developer",
-        "start": "2019-10-01",
+        "job_title": "Lead Frontend Developer",
+        "start": "2020-01-01",
         "strapi_id": 3,
         "overview": {
             "data": {
-                "overview": "- Responsible for creating, designing, and reviewing Web site by gathering business specifications, the Agile Scrum Application Development Methodology adopted.\n- Using Figma for the company's new sub-service (proxy service) UI/UX design\n- Project planning documents assumptions, functional requirements, product features, and programmer specifications. Recommend operational and process improvements based on efficiencies and available technologies.\n- Used naming service to hide the backend proxy provider endpoint.\n- retrieve all of the proxy endpoints provider market prices (packetstream.io, smartproxy.com)\n- integrate with Discord Auth API to implement social login in the system.\n- Stripe and PayPal payment Gateway integrate"
+                "overview": "- Lead and coordinated the frontend team of 4 members. Working both remote and in-house.\n- Attended decision-making meetings, design meetings, and project planning meetings.\n- Handled presentations to senior staff to show progress"
             }
         }
     },
     {
-        "end": "2019-03-01",
-        "company_url": "https://jlouis.com/",
-        "company_name": "J. Louis Technology, Inc",
+        "end": "2020-03-01",
+        "company_url": "https://adevait.com/",
+        "company_name": "Adeva",
         "is_present": false,
-        "job_title": "Fullstack developer",
-        "start": "2017-10-01",
+        "job_title": "Fullstack Developer",
+        "start": "2019-10-01",
         "strapi_id": 4,
         "overview": {
             "data": {
@@ -120,16 +121,30 @@
         }
     },
     {
-        "end": "2017-06-01",
-        "company_url": "https://www.mumblit.com",
-        "company_name": "Mumblit",
+        "end": "2019-02-01",
+        "company_url": "https://careernowbrands.com/",
+        "company_name": "CareerNowBrands",
         "is_present": false,
-        "job_title": "FrontEnd Developer",
-        "start": "2015-09-01",
+        "job_title": "Fullstack Developer",
+        "start": "2018-09-01",
         "strapi_id": 9,
         "overview": {
             "data": {
-                "overview": "- Involved in the development and programming of a modern website, utilizing React, HTML, Bootstrap, CSS, and JavaScript.\n- Designed UI using Material UI framework, configured the routing service using React, using Axios to fetch the data from the server and took part in creating custom reusable components."
+                "overview": "- Brought project mock-ups to life with React and Vuejs, evaluated website performance, troubleshoot front-end development issues, and devised new ways to build custom components.\n- Identified bugs, drafted reports, and reported to senior management for support in the decision-making process.\n- Started work on implementing a component Library using Storybook for the RocketPost project."
+            }
+        }
+    },
+    {
+        "end": "2020-03-01",
+        "company_url": "https://andela.com/",
+        "company_name": "Andela",
+        "is_present": false,
+        "job_title": "Fullstack Developer",
+        "start": "2017-10-17",
+        "strapi_id": 9,
+        "overview": {
+            "data": {
+                "overview": "- Made a major contribution in developing open-source projects (HealthChecks and Wger) through Python (Flask / Django).\n- Built scalable and maintainable RESTFul APIs by using NodeJS, Laravel, and Python.\n- Created responsive web frameworks, while completing deliverables ahead of schedule."
             }
         }
     }
